@@ -2,59 +2,94 @@ package com.example.ecostayretreat.booking;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ecostayretreat.R;
 import com.example.ecostayretreat.booking.adapter.RoomAdapter;
+import com.example.ecostayretreat.booking.data.AppDatabase;
 import com.example.ecostayretreat.booking.model.Room;
 
 import java.util.ArrayList;
 import java.util.List;
 
-// Implement the ClickListener interface from the adapter
 public class RoomActivity extends AppCompatActivity implements RoomAdapter.ClickListener {
 
     private RecyclerView recyclerViewRooms;
     private RoomAdapter roomAdapter;
     private List<Room> roomList;
+    private ProgressBar progressBar;
+    private TextView tvEmptyView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room_list);
 
-        // 1. Initialize the RecyclerView from the layout
+        // 1. Initialize Views
         recyclerViewRooms = findViewById(R.id.recyclerViewRooms);
+        progressBar = findViewById(R.id.progressBar); // We will add this to the layout
+        tvEmptyView = findViewById(R.id.tvEmptyView);   // We will add this too
 
-        // 2. Prepare the data source
-        loadRoomData();
-
-        // 3. Create an instance of the adapter, passing 'this' as the listener
+        // 2. Initialize the list and adapter
+        roomList = new ArrayList<>();
         roomAdapter = new RoomAdapter(roomList, this);
 
-        // 4. Set the Layout Manager and Adapter for the RecyclerView
+        // 3. Setup RecyclerView
         recyclerViewRooms.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewRooms.setAdapter(roomAdapter);
+
+        // 4. Load data from the database
+        loadRoomsFromDatabase();
 
         // Optional: Set a title for the activity
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Eco-Friendly Rooms");
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
     }
 
     /**
-     * Creates a dummy list of rooms for display.
+     * Fetches the list of rooms from the Room database on a background thread.
      */
-    private void loadRoomData() {
-        roomList = new ArrayList<>();
-        // Note: The image URLs are placeholders.
-        roomList.add(new Room("101", "Mountain-View Cabin", "A cozy cabin with a stunning view of the mountains.", 150.00, "url_to_image_1"));
-        roomList.add(new Room("102", "Forest Eco-Pod", "A unique, sustainable pod nestled in the forest.", 120.50, "url_to_image_2"));
-        roomList.add(new Room("103", "Lakeside Loft", "A modern loft with direct access to the lake.", 175.00, "url_to_image_3"));
-        roomList.add(new Room("104", "Sunrise Yurt", "A spacious yurt perfect for watching the sunrise.", 135.00, "url_to_image_4"));
-        roomList.add(new Room("105", "Canopy Treehouse", "An adventurous stay high up in the trees.", 200.00, "url_to_image_5"));
+    private void loadRoomsFromDatabase() {
+        // Show progress bar while loading
+        progressBar.setVisibility(View.VISIBLE);
+        recyclerViewRooms.setVisibility(View.GONE);
+        tvEmptyView.setVisibility(View.GONE);
+
+        // Get a handler that can update the main thread
+        Handler handler = new Handler(Looper.getMainLooper());
+
+        // Run the database query on a background thread
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            // Background work: fetch rooms
+            List<Room> roomsFromDb = AppDatabase.getDatabase(getApplicationContext())
+                    .roomDao()
+                    .getAllRooms();
+
+            // Post the result back to the main thread
+            handler.post(() -> {
+                // UI work: update the list and adapter
+                progressBar.setVisibility(View.GONE);
+                if (roomsFromDb != null && !roomsFromDb.isEmpty()) {
+                    roomList.clear();
+                    roomList.addAll(roomsFromDb);
+                    roomAdapter.notifyDataSetChanged();
+                    recyclerViewRooms.setVisibility(View.VISIBLE);
+                } else {
+                    // Show an empty state message if no rooms are found
+                    tvEmptyView.setVisibility(View.VISIBLE);
+                }
+            });
+        });
     }
 
     /**
@@ -63,9 +98,13 @@ public class RoomActivity extends AppCompatActivity implements RoomAdapter.Click
     @Override
     public void onItemClick(Room room) {
         Intent intent = new Intent(this, RoomDetailActivity.class);
-
-        // We will pass the room data in the next step.
-        // For now, this just opens the blank detail activity.
+        intent.putExtra("ROOM_EXTRA", room);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }

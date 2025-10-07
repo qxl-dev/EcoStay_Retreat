@@ -4,13 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.ecostayretreat.activities.ActivityListActivity;
-import com.example.ecostayretreat.auth.ProfileActivity;
-import com.example.ecostayretreat.booking.RoomListActivity;
-import com.example.ecostayretreat.info.ResortInfoActivity;
+// CORRECTED IMPORTS
+import com.example.ecostayretreat.booking.RoomActivity; // Correctly points to our existing RoomActivity
+import com.example.ecostayretreat.activities.ActivityListActivity; // Placeholder
+import com.example.ecostayretreat.auth.ProfileActivity; // Placeholder
+import com.example.ecostayretreat.info.ResortInfoActivity; // Placeholder
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,11 +24,9 @@ public class MainActivity extends AppCompatActivity {
         Button btnViewProfile = findViewById(R.id.btnViewProfile);
         Button btnResortInfo = findViewById(R.id.btnResortInfo);
 
-        // For simplicity, we navigate directly. In a real app, you'd check if the user is logged in.
-        // If not logged in, you would redirect to LoginActivity first.
-
         btnBrowseRooms.setOnClickListener(v -> {
-            startActivity(new Intent(MainActivity.this, RoomListActivity.class));
+            // THIS IS THE KEY FIX: Changed RoomListActivity.class to RoomActivity.class
+            startActivity(new Intent(MainActivity.this, RoomActivity.class));
         });
 
         btnBookActivities.setOnClickListener(v -> {
