@@ -1,72 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    tools:context=".booking.RoomDetailActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <!-- This is the ImageView the activity is looking for -->
+    <ImageView
+        android:id="@+id/ivRoomDetailImage"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
-        <ImageView
-            android:id="@+id/ivRoomDetailImage"
-            android:layout_width="0dp"
-            android:layout_height="250dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/backgrounds/scenic"
-            android:contentDescription="@string/image_of_the_room" />
+    <!-- This is the TextView for the room name -->
+    <TextView
+        android:id="@+id/tvRoomDetailName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivRoomDetailImage"
+        tools:text="Mountain-View Cabin" />
 
-        <TextView
-            android:id="@+id/tvRoomDetailName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:textAppearance="?attr/textAppearanceHeadline5"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ivRoomDetailImage"
-            tools:text="Mountain-View Cabin" />
+    <!-- This is the TextView for the room price -->
+    <TextView
+        android:id="@+id/tvRoomDetailPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        android:textColor="?attr/colorPrimary"
+        app:layout_constraintStart_toStartOf="@+id/tvRoomDetailName"
+        app:layout_constraintTop_toBottomOf="@id/tvRoomDetailName"
+        tools:text="$150.00 / night" />
 
-        <TextView
-            android:id="@+id/tvRoomDetailPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:textAppearance="?attr/textAppearanceHeadline6"
-            android:textColor="?attr/colorPrimary"
-            app:layout_constraintStart_toStartOf="@+id/tvRoomDetailName"
-            app:layout_constraintTop_toBottomOf="@+id/tvRoomDetailName"
-            tools:text="$150.00 / night" />
+    <!-- This is the TextView for the room description -->
+    <TextView
+        android:id="@+id/tvRoomDetailDescription"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:lineSpacingExtra="4dp"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        app:layout_constraintBottom_toTopOf="@+id/btnBookNow"
+        app:layout_constraintEnd_toEndOf="@+id/tvRoomDetailName"
+        app:layout_constraintStart_toStartOf="@+id/tvRoomDetailName"
+        app:layout_constraintTop_toBottomOf="@+id/tvRoomDetailPrice"
+        tools:text="A very long and detailed description of the room goes here." />
 
-        <TextView
-            android:id="@+id/tvRoomDetailDescription"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:textAppearance="?attr/textAppearanceBody1"
-            app:layout_constraintEnd_toEndOf="@+id/tvRoomDetailName"
-            app:layout_constraintStart_toStartOf="@+id/tvRoomDetailName"
-            app:layout_constraintTop_toBottomOf="@+id/tvRoomDetailPrice"
-            tools:text="A long and detailed description of the room, talking about its features, amenities, and the wonderful sustainable materials used in its construction." />
+    <!-- This is the Button for booking -->
+    <Button
+        android:id="@+id/btnBookNow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:padding="12dp"
+        android:text="Book Now"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-            android:id="@+id/btnBookNow"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="@string/book_now"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvRoomDetailDescription"
-            app:layout_constraintVertical_bias="1.0" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
