@@ -12,7 +12,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layouttest.activity_login);
 
         // --- Basic Logic ---
         EditText etEmail = findViewById(R.id.etLoginEmail);
