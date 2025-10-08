@@ -1,0 +1,1 @@
+package com.ecostay.ui.activities; public class ActivityReserveActivity extends android.app.Activity {}

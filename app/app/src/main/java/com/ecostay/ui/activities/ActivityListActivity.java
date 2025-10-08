@@ -1,0 +1,1 @@
+package com.ecostay.ui.activities; public class ActivityListActivity extends android.app.Activity {}

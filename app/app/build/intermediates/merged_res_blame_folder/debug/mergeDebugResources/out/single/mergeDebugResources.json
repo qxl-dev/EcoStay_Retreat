@@ -1,0 +1,74 @@
+[
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\layout_fragment_booking_history.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\layout\\fragment_booking_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\layout_item_room.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\layout\\item_room.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\layout_activity_room_detail.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\layout\\activity_room_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\layout_activity_activity_list.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\layout\\activity_activity_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\menu\\bottom_nav_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\layout_activity_info.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\layout\\activity_info.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\layout_activity_room_list.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\layout\\activity_room_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.ecostay.app-debug-32:/layout_activity_main.xml.flat",
+        "source": "com.ecostay.app-main-34:/layout/activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\layout_activity_activity_reserve.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\layout\\activity_activity_reserve.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\layout_activity_profile.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\layout\\activity_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\layout_item_activity.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\layout\\item_activity.xml"
+    }
+]
