@@ -1,73 +1,55 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".booking.RoomDetailActivity">
+    android:padding="16dp">
 
-    <!-- This is the ImageView the activity is looking for -->
-    <ImageView
-        android:id="@+id/ivRoomDetailImage"
-        android:layout_width="0dp"
-        android:layout_height="250dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <!-- This is the TextView for the room name -->
-    <TextView
-        android:id="@+id/tvRoomDetailName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivRoomDetailImage"
-        tools:text="Mountain-View Cabin" />
+        <TextView
+            android:id="@+id/tvTitle"
+            android:text="Room Title"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-    <!-- This is the TextView for the room price -->
-    <TextView
-        android:id="@+id/tvRoomDetailPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-        android:textColor="?attr/colorPrimary"
-        app:layout_constraintStart_toStartOf="@+id/tvRoomDetailName"
-        app:layout_constraintTop_toBottomOf="@id/tvRoomDetailName"
-        tools:text="$150.00 / night" />
+        <TextView
+            android:id="@+id/tvType"
+            android:text="Type"
+            android:textSize="16sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginBottom="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-    <!-- This is the TextView for the room description -->
-    <TextView
-        android:id="@+id/tvRoomDetailDescription"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:lineSpacingExtra="4dp"
-        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
-        app:layout_constraintBottom_toTopOf="@+id/btnBookNow"
-        app:layout_constraintEnd_toEndOf="@+id/tvRoomDetailName"
-        app:layout_constraintStart_toStartOf="@+id/tvRoomDetailName"
-        app:layout_constraintTop_toBottomOf="@+id/tvRoomDetailPrice"
-        tools:text="A very long and detailed description of the room goes here." />
+        <TextView
+            android:id="@+id/tvPrice"
+            android:text="$150/night"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/eco_green_dark"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-    <!-- This is the Button for booking -->
-    <Button
-        android:id="@+id/btnBookNow"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:padding="12dp"
-        android:text="Book Now"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/tvDescription"
+            android:text="Full description of the room..."
+            android:layout_marginBottom="20dp"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btnBookNow"
+            android:text="Book Now"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/eco_green_dark"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+</ScrollView>

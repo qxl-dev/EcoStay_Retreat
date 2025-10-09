@@ -1,9 +1,7 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.EcoStayRetreat" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<resources>
+    <style name="Theme.EcoStay" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/eco_green</item>
+        <item name="colorPrimaryVariant">@color/eco_green_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
     </style>
-
-    <style name="Theme.EcoStayRetreat" parent="Base.Theme.EcoStayRetreat" />
 </resources>

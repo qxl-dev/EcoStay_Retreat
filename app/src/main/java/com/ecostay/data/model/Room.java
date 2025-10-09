@@ -1,0 +1,1 @@
+package com.ecostay.data.model; public class Room { public int id; public String title,type,description; public double price; public int available; }
