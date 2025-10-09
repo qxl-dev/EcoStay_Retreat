@@ -8,6 +8,9 @@
         android:minSdkVersion="24"
         android:targetSdkVersion="34" />
 
+    <!-- Notification permissions -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <permission
         android:name="com.ecostay.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
@@ -24,7 +27,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/Theme.EcoStay" >
+        android:theme="@style/AppTheme" > <!-- Updated theme -->
+
+
+        <!-- Main Activity -->
         <activity
             android:name="com.ecostay.ui.MainActivity"
             android:exported="true" >
@@ -34,6 +40,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Other Activities -->
         <activity
             android:name="com.ecostay.ui.auth.LoginActivity"
             android:exported="false" />
@@ -58,7 +66,9 @@
         <activity
             android:name="com.ecostay.ui.info.InfoActivity"
             android:exported="false" />
-        <activity android:name="com.ecostay.ui.auth.BookingHistoryActivity" />
+        <activity
+            android:name="com.ecostay.ui.auth.BookingHistoryActivity"
+            android:exported="false" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

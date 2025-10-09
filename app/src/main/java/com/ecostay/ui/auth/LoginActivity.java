@@ -37,6 +37,8 @@ public class LoginActivity extends AppCompatActivity {
 
             if (user != null) {
                 SessionManager.setUserId(this, user.id);
+                SessionManager.setUserName(this, user.name);
+                SessionManager.setUserEmail(this, user.email);
                 Toast.makeText(this, "Welcome, " + user.name + "!", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, MainActivity.class));
                 finish();

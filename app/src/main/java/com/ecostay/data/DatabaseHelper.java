@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "ecostay.db";
-    private static final int DB_VERSION = 2; // ✅ bump version to recreate DB
+    private static final int DB_VERSION = 3; // ✅ bump version to recreate DB with new user fields
 
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -19,7 +19,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "name TEXT, " +
                 "email TEXT UNIQUE, " +
                 "password TEXT, " +
-                "preferences TEXT)");
+                "preferences TEXT, " +
+                "travel_dates TEXT, " +
+                "eco_interests TEXT)");
 
         db.execSQL("CREATE TABLE IF NOT EXISTS rooms (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +

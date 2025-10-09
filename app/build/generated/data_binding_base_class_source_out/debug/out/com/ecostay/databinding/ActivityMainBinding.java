@@ -5,7 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -17,7 +18,7 @@ import java.lang.String;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ScrollView rootView;
 
   @NonNull
   public final Button btnActivities;
@@ -26,23 +27,41 @@ public final class ActivityMainBinding implements ViewBinding {
   public final Button btnBookRoom;
 
   @NonNull
+  public final Button btnBookingHistory;
+
+  @NonNull
+  public final Button btnInfo;
+
+  @NonNull
   public final Button btnLogout;
 
   @NonNull
   public final Button btnProfile;
 
-  private ActivityMainBinding(@NonNull LinearLayout rootView, @NonNull Button btnActivities,
-      @NonNull Button btnBookRoom, @NonNull Button btnLogout, @NonNull Button btnProfile) {
+  @NonNull
+  public final TextView tvRecommendations;
+
+  @NonNull
+  public final TextView tvWelcomeUser;
+
+  private ActivityMainBinding(@NonNull ScrollView rootView, @NonNull Button btnActivities,
+      @NonNull Button btnBookRoom, @NonNull Button btnBookingHistory, @NonNull Button btnInfo,
+      @NonNull Button btnLogout, @NonNull Button btnProfile, @NonNull TextView tvRecommendations,
+      @NonNull TextView tvWelcomeUser) {
     this.rootView = rootView;
     this.btnActivities = btnActivities;
     this.btnBookRoom = btnBookRoom;
+    this.btnBookingHistory = btnBookingHistory;
+    this.btnInfo = btnInfo;
     this.btnLogout = btnLogout;
     this.btnProfile = btnProfile;
+    this.tvRecommendations = tvRecommendations;
+    this.tvWelcomeUser = tvWelcomeUser;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -79,6 +98,18 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnBookingHistory;
+      Button btnBookingHistory = ViewBindings.findChildViewById(rootView, id);
+      if (btnBookingHistory == null) {
+        break missingId;
+      }
+
+      id = R.id.btnInfo;
+      Button btnInfo = ViewBindings.findChildViewById(rootView, id);
+      if (btnInfo == null) {
+        break missingId;
+      }
+
       id = R.id.btnLogout;
       Button btnLogout = ViewBindings.findChildViewById(rootView, id);
       if (btnLogout == null) {
@@ -91,8 +122,20 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((LinearLayout) rootView, btnActivities, btnBookRoom, btnLogout,
-          btnProfile);
+      id = R.id.tvRecommendations;
+      TextView tvRecommendations = ViewBindings.findChildViewById(rootView, id);
+      if (tvRecommendations == null) {
+        break missingId;
+      }
+
+      id = R.id.tvWelcomeUser;
+      TextView tvWelcomeUser = ViewBindings.findChildViewById(rootView, id);
+      if (tvWelcomeUser == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((ScrollView) rootView, btnActivities, btnBookRoom,
+          btnBookingHistory, btnInfo, btnLogout, btnProfile, tvRecommendations, tvWelcomeUser);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

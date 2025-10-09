@@ -8,6 +8,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.ecostay.R;
 import com.ecostay.data.dao.BookingDao;
+import com.ecostay.data.dao.ActivityBookingDao;
 import com.ecostay.data.model.Booking;
 import com.ecostay.util.SessionManager;
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class BookingHistoryActivity extends AppCompatActivity {
 
     ListView listView;
     BookingDao bookingDao;
+    ActivityBookingDao activityBookingDao;
     List<Booking> bookingList;
     SimpleAdapter adapter;
     List<Map<String, String>> data;
@@ -30,18 +32,26 @@ public class BookingHistoryActivity extends AppCompatActivity {
 
         listView = findViewById(R.id.listBookings);
         bookingDao = new BookingDao(this);
+        activityBookingDao = new ActivityBookingDao(this);
 
         loadBookings();
 
         // 🟡 Long press → Confirm delete
         listView.setOnItemLongClickListener((parent, view, position, id) -> {
-            Booking selected = bookingList.get(position);
+            Map<String, String> selectedItem = data.get(position);
+            String bookingType = selectedItem.get("type");
+            String bookingId = selectedItem.get("id");
+            String bookingTitle = selectedItem.get("title").substring(2); // Remove emoji prefix
 
             new AlertDialog.Builder(this)
                     .setTitle("Cancel Booking?")
-                    .setMessage("Do you want to remove the booking for \"" + selected.roomTitle + "\"?")
+                    .setMessage("Do you want to remove the booking for \"" + bookingTitle + "\"?")
                     .setPositiveButton("Yes", (dialog, which) -> {
-                        bookingDao.deleteBooking(selected.id);
+                        if ("room".equals(bookingType)) {
+                            bookingDao.deleteBooking(Integer.parseInt(bookingId));
+                        } else if ("activity".equals(bookingType)) {
+                            activityBookingDao.deleteActivityBooking(Integer.parseInt(bookingId));
+                        }
                         Toast.makeText(this, "Booking canceled.", Toast.LENGTH_SHORT).show();
                         loadBookings(); // refresh list
                     })
@@ -57,13 +67,27 @@ public class BookingHistoryActivity extends AppCompatActivity {
         bookingList = bookingDao.getBookingsForUser(userId);
         if (bookingList == null) bookingList = new ArrayList<>();
 
-
         data = new ArrayList<>();
+        
+        // Add room bookings
         for (Booking b : bookingList) {
             Map<String, String> map = new HashMap<>();
-            map.put("title", b.roomTitle);
+            map.put("title", "🏨 " + b.roomTitle);
             map.put("detail", "$" + b.price + " • " +
                     android.text.format.DateFormat.format("MMM dd, yyyy", b.timestamp));
+            map.put("type", "room");
+            map.put("id", String.valueOf(b.id));
+            data.add(map);
+        }
+        
+        // Add activity bookings
+        List<Map<String, String>> activityBookings = activityBookingDao.getActivityBookingDetails(userId);
+        for (Map<String, String> activityBooking : activityBookings) {
+            Map<String, String> map = new HashMap<>();
+            map.put("title", "🎯 " + activityBooking.get("title"));
+            map.put("detail", "$" + activityBooking.get("price") + " • " + activityBooking.get("date"));
+            map.put("type", "activity");
+            map.put("id", activityBooking.get("id"));
             data.add(map);
         }
 

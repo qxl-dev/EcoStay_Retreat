@@ -5,7 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -17,20 +18,33 @@ import java.lang.String;
 
 public final class ActivityActivityReserveBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ScrollView rootView;
 
   @NonNull
   public final Button btnBookActivity;
 
-  private ActivityActivityReserveBinding(@NonNull LinearLayout rootView,
-      @NonNull Button btnBookActivity) {
+  @NonNull
+  public final TextView tvActivityDescription;
+
+  @NonNull
+  public final TextView tvActivityPrice;
+
+  @NonNull
+  public final TextView tvActivityTitle;
+
+  private ActivityActivityReserveBinding(@NonNull ScrollView rootView,
+      @NonNull Button btnBookActivity, @NonNull TextView tvActivityDescription,
+      @NonNull TextView tvActivityPrice, @NonNull TextView tvActivityTitle) {
     this.rootView = rootView;
     this.btnBookActivity = btnBookActivity;
+    this.tvActivityDescription = tvActivityDescription;
+    this.tvActivityPrice = tvActivityPrice;
+    this.tvActivityTitle = tvActivityTitle;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -61,7 +75,26 @@ public final class ActivityActivityReserveBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityActivityReserveBinding((LinearLayout) rootView, btnBookActivity);
+      id = R.id.tvActivityDescription;
+      TextView tvActivityDescription = ViewBindings.findChildViewById(rootView, id);
+      if (tvActivityDescription == null) {
+        break missingId;
+      }
+
+      id = R.id.tvActivityPrice;
+      TextView tvActivityPrice = ViewBindings.findChildViewById(rootView, id);
+      if (tvActivityPrice == null) {
+        break missingId;
+      }
+
+      id = R.id.tvActivityTitle;
+      TextView tvActivityTitle = ViewBindings.findChildViewById(rootView, id);
+      if (tvActivityTitle == null) {
+        break missingId;
+      }
+
+      return new ActivityActivityReserveBinding((ScrollView) rootView, btnBookActivity,
+          tvActivityDescription, tvActivityPrice, tvActivityTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

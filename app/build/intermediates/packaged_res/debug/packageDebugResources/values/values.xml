@@ -1,16 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#000000</color>
+    <color name="dark_blue">#0D47A1</color>
+    <color name="eco_accent">#FFC107</color>
+    <color name="eco_accent_dark">#FF8F00</color>
+    <color name="eco_accent_light">#FFECB3</color>
+    <color name="eco_background">#F1F8E9</color>
+    <color name="eco_black">#212121</color>
     <color name="eco_blue">#039BE5</color>
+    <color name="eco_earth">#8D6E63</color>
+    <color name="eco_earth_dark">#5D4037</color>
+    <color name="eco_earth_light">#D7CCC8</color>
+    <color name="eco_error">#F44336</color>
+    <color name="eco_gray">#9E9E9E</color>
+    <color name="eco_gray_dark">#424242</color>
+    <color name="eco_gray_light">#F5F5F5</color>
     <color name="eco_green">#2E7D32</color>
     <color name="eco_green_dark">#1B5E20</color>
+    <color name="eco_info">#2196F3</color>
+    <color name="eco_light_blue">#B3E5FC</color>
     <color name="eco_orange">#FF7043</color>
+    <color name="eco_primary">#2E7D32</color>
+    <color name="eco_primary_dark">#1B5E20</color>
+    <color name="eco_primary_light">#4CAF50</color>
+    <color name="eco_secondary">#8BC34A</color>
+    <color name="eco_secondary_dark">#689F38</color>
+    <color name="eco_secondary_light">#AED581</color>
+    <color name="eco_sky">#81C784</color>
+    <color name="eco_sky_dark">#4CAF50</color>
+    <color name="eco_sky_light">#C8E6C9</color>
+    <color name="eco_success">#4CAF50</color>
+    <color name="eco_surface">#FFFFFF</color>
+    <color name="eco_surface_variant">#F5F5F5</color>
+    <color name="eco_text_hint">#689F38</color>
+    <color name="eco_text_primary">#1B5E20</color>
+    <color name="eco_text_secondary">#2E7D32</color>
+    <color name="eco_warning">#FF9800</color>
+    <color name="eco_white">#FFFFFF</color>
     <color name="eco_yellow">#FFEB3B</color>
+    <color name="light_blue">#42A5F5</color>
     <color name="white">#FFFFFF</color>
     <string name="app_name">EcoStay Retreat</string>
-    <style name="Theme.EcoStay" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/eco_green</item>
-        <item name="colorPrimaryVariant">@color/eco_green_dark</item>
-        <item name="colorOnPrimary">@color/white</item>
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        
+        <item name="android:windowBackground">@color/eco_background</item>
+
+        
+        <item name="colorPrimary">@color/eco_primary</item>
+        <item name="colorPrimaryVariant">@color/eco_primary_dark</item>
+        <item name="colorOnPrimary">@color/eco_white</item>
+
+        
+        <item name="colorSecondary">@color/eco_secondary</item>
+        <item name="colorSecondaryVariant">@color/eco_secondary_dark</item>
+        <item name="colorOnSecondary">@color/eco_white</item>
+
+        
+        <item name="colorAccent">@color/eco_accent</item>
+
+        
+        <item name="colorSurface">@color/eco_surface</item>
+        <item name="colorOnSurface">@color/eco_text_primary</item>
+
+        
+        <item name="android:colorBackground">@color/eco_background</item>
+        <item name="colorOnBackground">@color/eco_text_primary</item>
+
+        
+        <item name="android:textColorPrimary">@color/eco_text_primary</item>
+        <item name="android:textColorSecondary">@color/eco_text_secondary</item>
+        <item name="android:textColorHint">@color/eco_text_hint</item>
+
+        
+        <item name="android:statusBarColor">@color/eco_primary_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        
+        <item name="actionBarStyle">@style/EcoActionBarStyle</item>
     </style>
+    <style name="Base.Theme.EcoStayRetreat" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="CustomButtonStyle">
+        <item name="android:background">@drawable/eco_button_primary</item>
+        <item name="android:textColor">@color/eco_white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="EcoActionBarStyle" parent="Widget.MaterialComponents.ActionBar.Primary">
+        <item name="background">@color/eco_primary</item>
+        <item name="titleTextColor">@color/eco_white</item>
+    </style>
+    <style name="EcoButtonAccent">
+        <item name="android:background">@drawable/eco_button_accent</item>
+        <item name="android:textColor">@color/eco_white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:drawablePadding">8dp</item>
+    </style>
+    <style name="EcoButtonPrimary">
+        <item name="android:background">@drawable/eco_button_primary</item>
+        <item name="android:textColor">@color/eco_white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:drawablePadding">8dp</item>
+    </style>
+    <style name="EcoButtonSecondary">
+        <item name="android:background">@drawable/eco_button_secondary</item>
+        <item name="android:textColor">@color/eco_primary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:drawablePadding">8dp</item>
+    </style>
+    <style name="EcoCard">
+        <item name="android:background">@drawable/eco_card_background</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:padding">16dp</item>
+    </style>
+    <style name="EcoTextBody">
+        <item name="android:textColor">@color/eco_text_primary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="EcoTextSubtitle">
+        <item name="android:textColor">@color/eco_text_secondary</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="EcoTextTitle">
+        <item name="android:textColor">@color/eco_text_primary</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="Theme.EcoStayRetreat" parent="Base.Theme.EcoStayRetreat"/>
 </resources>

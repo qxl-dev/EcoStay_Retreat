@@ -4,7 +4,10 @@ package com.ecostay.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.Button;
+import android.widget.ScrollView;
+import android.widget.Spinner;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,20 +20,42 @@ import java.lang.String;
 
 public final class ActivityRoomListBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ScrollView rootView;
+
+  @NonNull
+  public final Button btnShowAll;
+
+  @NonNull
+  public final Button btnSortPrice;
+
+  @NonNull
+  public final Button btnSortType;
 
   @NonNull
   public final RecyclerView recyclerRooms;
 
-  private ActivityRoomListBinding(@NonNull LinearLayout rootView,
-      @NonNull RecyclerView recyclerRooms) {
+  @NonNull
+  public final Spinner spinnerFilter;
+
+  @NonNull
+  public final TextView tvTitle;
+
+  private ActivityRoomListBinding(@NonNull ScrollView rootView, @NonNull Button btnShowAll,
+      @NonNull Button btnSortPrice, @NonNull Button btnSortType,
+      @NonNull RecyclerView recyclerRooms, @NonNull Spinner spinnerFilter,
+      @NonNull TextView tvTitle) {
     this.rootView = rootView;
+    this.btnShowAll = btnShowAll;
+    this.btnSortPrice = btnSortPrice;
+    this.btnSortType = btnSortType;
     this.recyclerRooms = recyclerRooms;
+    this.spinnerFilter = spinnerFilter;
+    this.tvTitle = tvTitle;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -55,13 +80,44 @@ public final class ActivityRoomListBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnShowAll;
+      Button btnShowAll = ViewBindings.findChildViewById(rootView, id);
+      if (btnShowAll == null) {
+        break missingId;
+      }
+
+      id = R.id.btnSortPrice;
+      Button btnSortPrice = ViewBindings.findChildViewById(rootView, id);
+      if (btnSortPrice == null) {
+        break missingId;
+      }
+
+      id = R.id.btnSortType;
+      Button btnSortType = ViewBindings.findChildViewById(rootView, id);
+      if (btnSortType == null) {
+        break missingId;
+      }
+
       id = R.id.recyclerRooms;
       RecyclerView recyclerRooms = ViewBindings.findChildViewById(rootView, id);
       if (recyclerRooms == null) {
         break missingId;
       }
 
-      return new ActivityRoomListBinding((LinearLayout) rootView, recyclerRooms);
+      id = R.id.spinnerFilter;
+      Spinner spinnerFilter = ViewBindings.findChildViewById(rootView, id);
+      if (spinnerFilter == null) {
+        break missingId;
+      }
+
+      id = R.id.tvTitle;
+      TextView tvTitle = ViewBindings.findChildViewById(rootView, id);
+      if (tvTitle == null) {
+        break missingId;
+      }
+
+      return new ActivityRoomListBinding((ScrollView) rootView, btnShowAll, btnSortPrice,
+          btnSortType, recyclerRooms, spinnerFilter, tvTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -1,13 +1,61 @@
 <resources>
+    <!-- Primary Eco-Friendly Colors -->
+    <color name="eco_primary">#2E7D32</color> <!-- Forest Green -->
+    <color name="eco_primary_dark">#1B5E20</color> <!-- Dark Forest Green -->
+    <color name="eco_primary_light">#4CAF50</color> <!-- Light Green -->
+    
+    <!-- Secondary Colors -->
+    <color name="eco_secondary">#8BC34A</color> <!-- Light Green -->
+    <color name="eco_secondary_dark">#689F38</color> <!-- Dark Light Green -->
+    <color name="eco_secondary_light">#AED581</color> <!-- Very Light Green -->
+    
+    <!-- Accent Colors -->
+    <color name="eco_accent">#FFC107</color> <!-- Amber -->
+    <color name="eco_accent_dark">#FF8F00</color> <!-- Dark Amber -->
+    <color name="eco_accent_light">#FFECB3</color> <!-- Light Amber -->
+    
+    <!-- Earth Tones -->
+    <color name="eco_earth">#8D6E63</color> <!-- Brown -->
+    <color name="eco_earth_dark">#5D4037</color> <!-- Dark Brown -->
+    <color name="eco_earth_light">#D7CCC8</color> <!-- Light Brown -->
+    
+    <!-- Sky Colors -->
+    <color name="eco_sky">#81C784</color> <!-- Sky Blue Green -->
+    <color name="eco_sky_dark">#4CAF50</color> <!-- Dark Sky -->
+    <color name="eco_sky_light">#C8E6C9</color> <!-- Light Sky -->
+    
+    <!-- Neutral Colors -->
+    <color name="eco_white">#FFFFFF</color>
+    <color name="eco_black">#212121</color>
+    <color name="eco_gray_light">#F5F5F5</color>
+    <color name="eco_gray">#9E9E9E</color>
+    <color name="eco_gray_dark">#424242</color>
+    
+    <!-- Background Colors -->
+    <color name="eco_background">#F1F8E9</color> <!-- Very Light Green -->
+    <color name="eco_surface">#FFFFFF</color>
+    <color name="eco_surface_variant">#F5F5F5</color>
+    
+    <!-- Text Colors -->
+    <color name="eco_text_primary">#1B5E20</color>
+    <color name="eco_text_secondary">#2E7D32</color>
+    <color name="eco_text_hint">#689F38</color>
+    
+    <!-- Status Colors -->
+    <color name="eco_success">#4CAF50</color>
+    <color name="eco_warning">#FF9800</color>
+    <color name="eco_error">#F44336</color>
+    <color name="eco_info">#2196F3</color>
+    
+    <!-- Legacy colors for compatibility -->
     <color name="eco_green">#2E7D32</color>
     <color name="eco_green_dark">#1B5E20</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
-
-
-    <color name="eco_blue">#039BE5</color> <!-- Blue -->
-    <color name="eco_yellow">#FFEB3B</color> <!-- Yellow -->
-    <color name="eco_orange">#FF7043</color> <!-- Orange -->
-
-
+    <color name="eco_blue">#039BE5</color>
+    <color name="eco_yellow">#FFEB3B</color>
+    <color name="eco_orange">#FF7043</color>
+    <color name="eco_light_blue">#B3E5FC</color>
+    <color name="dark_blue">#0D47A1</color>
+    <color name="light_blue">#42A5F5</color>
 </resources>

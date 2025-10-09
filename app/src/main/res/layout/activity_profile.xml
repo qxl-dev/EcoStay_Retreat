@@ -1,52 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:padding="24dp"
+    android:background="@color/eco_light_blue"> <!-- Gradient color for background -->
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <!-- Full Name Field -->
         <EditText
             android:id="@+id/etName"
             android:hint="Full Name"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:enabled="true"/>
+            android:layout_marginBottom="16dp"
+            android:padding="12dp"
+            android:background="@drawable/edit_text_border" />
 
+        <!-- Email Field -->
         <EditText
             android:id="@+id/etEmail"
             android:hint="Email"
             android:inputType="textEmailAddress"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:enabled="true"/>
+            android:layout_marginBottom="16dp"
+            android:padding="12dp"
+            android:background="@drawable/edit_text_border" />
 
+        <!-- Preferences Field -->
         <EditText
             android:id="@+id/etPreferences"
             android:hint="Preferences"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:enabled="true"/>
+            android:layout_marginBottom="16dp"
+            android:padding="12dp"
+            android:background="@drawable/edit_text_border" />
 
+        <!-- Update Profile Button -->
         <Button
             android:id="@+id/btnUpdate"
             android:text="Update Profile"
+            style="@style/CustomButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp" />
 
+        <!-- Logout Button -->
         <Button
             android:id="@+id/btnLogout"
             android:text="Logout"
+            style="@style/CustomButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="8dp" />
 
+        <!-- My Bookings Button -->
         <Button
             android:id="@+id/btnBookings"
             android:text="My Bookings"
+            style="@style/CustomButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp" />

@@ -40,6 +40,7 @@ public class ActivityDao {
         if (cursor.moveToFirst()) {
             do {
                 ActivityItem activity = new ActivityItem(
+                        cursor.getInt(cursor.getColumnIndexOrThrow("id")),
                         cursor.getString(cursor.getColumnIndexOrThrow("title")),
                         cursor.getString(cursor.getColumnIndexOrThrow("description")),
                         cursor.getDouble(cursor.getColumnIndexOrThrow("price"))
@@ -50,5 +51,29 @@ public class ActivityDao {
         cursor.close();
         db.close();
         return activityList;
+    }
+
+    // Get activity by ID
+    public ActivityItem getActivityById(int activityId) {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        ActivityItem activity = null;
+
+        Cursor cursor = db.rawQuery(
+            "SELECT * FROM activities WHERE id = ?",
+            new String[]{String.valueOf(activityId)}
+        );
+
+        if (cursor.moveToFirst()) {
+            activity = new ActivityItem(
+                cursor.getInt(cursor.getColumnIndexOrThrow("id")),
+                cursor.getString(cursor.getColumnIndexOrThrow("title")),
+                cursor.getString(cursor.getColumnIndexOrThrow("description")),
+                cursor.getDouble(cursor.getColumnIndexOrThrow("price"))
+            );
+        }
+
+        cursor.close();
+        db.close();
+        return activity;
     }
 }

@@ -43,11 +43,60 @@ public class UserDao {
             user.name = cursor.getString(cursor.getColumnIndexOrThrow("name"));
             user.email = cursor.getString(cursor.getColumnIndexOrThrow("email"));
             user.preferences = cursor.getString(cursor.getColumnIndexOrThrow("preferences"));
+            // Handle new fields with null checks
+            int travelDatesIndex = cursor.getColumnIndex("travel_dates");
+            int ecoInterestsIndex = cursor.getColumnIndex("eco_interests");
+            user.travelDates = travelDatesIndex >= 0 ? cursor.getString(travelDatesIndex) : "";
+            user.ecoInterests = ecoInterestsIndex >= 0 ? cursor.getString(ecoInterestsIndex) : "";
         }
 
         cursor.close();
         db.close();
         return user;
+    }
+
+    // Get personalized recommendations based on user preferences
+    public java.util.List<String> getPersonalizedRecommendations(int userId) {
+        java.util.List<String> recommendations = new java.util.ArrayList<>();
+        try {
+            SQLiteDatabase db = dbHelper.getReadableDatabase();
+            Cursor cursor = db.rawQuery("SELECT preferences, eco_interests FROM users WHERE id = ?", 
+                    new String[]{String.valueOf(userId)});
+            
+            if (cursor.moveToFirst()) {
+                String preferences = cursor.getString(cursor.getColumnIndexOrThrow("preferences"));
+                int ecoInterestsIndex = cursor.getColumnIndex("eco_interests");
+                String ecoInterests = ecoInterestsIndex >= 0 ? cursor.getString(ecoInterestsIndex) : "";
+                
+                // Generate recommendations based on preferences
+                if (preferences != null && preferences.toLowerCase().contains("hiking")) {
+                    recommendations.add("🌲 Guided Nature Hikes - Perfect for your hiking interests!");
+                }
+                if (preferences != null && preferences.toLowerCase().contains("bird")) {
+                    recommendations.add("🦅 Bird Watching Sessions - Spot rare species in their habitat!");
+                }
+                if (ecoInterests != null && ecoInterests.toLowerCase().contains("sustainability")) {
+                    recommendations.add("♻️ Sustainability Workshops - Learn eco-friendly practices!");
+                }
+                if (preferences != null && preferences.toLowerCase().contains("family")) {
+                    recommendations.add("👨‍👩‍👧‍👦 Family Eco Tours - Great for family adventures!");
+                }
+                
+                // Default recommendations
+                if (recommendations.isEmpty()) {
+                    recommendations.add("🌿 Eco-Friendly Activities - Discover our sustainable experiences!");
+                    recommendations.add("🏞️ Nature Reserve Tours - Explore pristine wilderness areas!");
+                }
+            }
+            
+            cursor.close();
+            db.close();
+        } catch (Exception e) {
+            // Fallback recommendations if there's any error
+            recommendations.add("🌿 Eco-Friendly Activities - Discover our sustainable experiences!");
+            recommendations.add("🏞️ Nature Reserve Tours - Explore pristine wilderness areas!");
+        }
+        return recommendations;
     }
 
     // Check if email already exists

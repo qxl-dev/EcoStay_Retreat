@@ -4,7 +4,7 @@ package com.ecostay.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,19 +17,19 @@ import java.lang.String;
 
 public final class ActivityInfoBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ScrollView rootView;
 
   @NonNull
   public final TextView tvInfo;
 
-  private ActivityInfoBinding(@NonNull LinearLayout rootView, @NonNull TextView tvInfo) {
+  private ActivityInfoBinding(@NonNull ScrollView rootView, @NonNull TextView tvInfo) {
     this.rootView = rootView;
     this.tvInfo = tvInfo;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -60,7 +60,7 @@ public final class ActivityInfoBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityInfoBinding((LinearLayout) rootView, tvInfo);
+      return new ActivityInfoBinding((ScrollView) rootView, tvInfo);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

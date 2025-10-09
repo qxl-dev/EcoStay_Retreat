@@ -1,21 +1,62 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:background="@color/eco_background"
+    android:fillViewport="true">
 
-    <TextView
-        android:text="EcoStay Retreat Information"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
 
-    <TextView
-        android:id="@+id/tvInfo"
-        android:text="Information about EcoStay, local nature reserves, sustainability practices, etc."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <!-- Header Section -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/eco_card_background"
+            android:padding="24dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center">
 
-</LinearLayout>
+            <TextView
+                android:text="🌿 EcoStay Retreat"
+                android:textColor="@color/eco_primary"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="Nature Reserves &amp; Sustainability"
+                android:textColor="@color/eco_text_secondary"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <!-- Information Content -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/eco_card_background"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tvInfo"
+                android:text="Info about EcoStay Retreat"
+                android:textColor="@color/eco_text_primary"
+                android:textSize="14sp"
+                android:lineSpacingExtra="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
