@@ -1,1 +1,0 @@
-package com.ecostay.data.dao; public class ActivityBookingDao {}

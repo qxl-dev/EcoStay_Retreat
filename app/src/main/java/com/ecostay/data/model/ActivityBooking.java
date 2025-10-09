@@ -4,15 +4,18 @@ public class ActivityBooking {
     public int id;
     public int userId;
     public int activityId;
-    public long bookingDate;
+    public String date;  // Booking date
 
-    // Default constructor
-    public ActivityBooking() {}
-
-    // Constructor with values
-    public ActivityBooking(int userId, int activityId, long bookingDate) {
+    // Constructor
+    public ActivityBooking(int userId, int activityId, String date) {
         this.userId = userId;
         this.activityId = activityId;
-        this.bookingDate = bookingDate;
+        this.date = date;
     }
+
+    // Getters and setters
+    public int getId() { return id; }
+    public int getUserId() { return userId; }
+    public int getActivityId() { return activityId; }
+    public String getDate() { return date; }
 }

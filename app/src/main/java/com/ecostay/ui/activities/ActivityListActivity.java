@@ -47,12 +47,9 @@ public class ActivityListActivity extends AppCompatActivity {
         // Add some sample activities if the table is empty
         List<ActivityItem> existingActivities = activityDao.getAllActivities();
         if (existingActivities.isEmpty()) {
-            long currentTimestamp = System.currentTimeMillis(); // Get current timestamp
-            // Insert sample activities with required arguments (title, description, price, timestamp)
-            activityDao.addActivity(new ActivityItem("Guided Eco Tour", "Explore the local flora and fauna.", 50.0, currentTimestamp));
-            activityDao.addActivity(new ActivityItem("Sustainability Workshop", "Learn how to live sustainably.", 30.0, currentTimestamp));
-            activityDao.addActivity(new ActivityItem("Bird-Watching Session", "A relaxing bird-watching session.", 25.0, currentTimestamp));
+            activityDao.addActivity(new ActivityItem("Guided Eco Tour", "Explore the local flora and fauna.", 50.0));
+            activityDao.addActivity(new ActivityItem("Sustainability Workshop", "Learn how to live sustainably.", 30.0));
+            activityDao.addActivity(new ActivityItem("Bird-Watching Session", "A relaxing bird-watching session.", 25.0));
         }
     }
-
 }

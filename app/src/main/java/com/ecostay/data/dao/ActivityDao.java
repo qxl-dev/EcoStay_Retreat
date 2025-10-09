@@ -32,7 +32,6 @@ public class ActivityDao {
     }
 
     // Get all activities
-// Get all activities
     public List<ActivityItem> getAllActivities() {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         List<ActivityItem> activityList = new ArrayList<>();
@@ -40,21 +39,16 @@ public class ActivityDao {
         Cursor cursor = db.rawQuery("SELECT * FROM activities", null);
         if (cursor.moveToFirst()) {
             do {
-                // 1. Retrieve data from the cursor first
-                long id = cursor.getLong(cursor.getColumnIndexOrThrow("id"));
-                String title = cursor.getString(cursor.getColumnIndexOrThrow("title"));
-                String description = cursor.getString(cursor.getColumnIndexOrThrow("description"));
-                double price = cursor.getDouble(cursor.getColumnIndexOrThrow("price"));
-
-                // 2. Pass the retrieved data into the constructor
-                ActivityItem activity = new ActivityItem(title, description, price, id);
+                ActivityItem activity = new ActivityItem(
+                        cursor.getString(cursor.getColumnIndexOrThrow("title")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("description")),
+                        cursor.getDouble(cursor.getColumnIndexOrThrow("price"))
+                );
                 activityList.add(activity);
-
             } while (cursor.moveToNext());
         }
         cursor.close();
         db.close();
         return activityList;
     }
-
 }

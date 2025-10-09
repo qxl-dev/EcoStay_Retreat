@@ -1,1 +1,0 @@
-package com.ecostay.data.model; public class User { public int id; public String name,email,password,preferences; }

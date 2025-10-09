@@ -1,1 +1,0 @@
-package com.ecostay.ui.info; public class InfoActivity extends android.app.Activity {}

@@ -18,7 +18,7 @@ public class ActivityReserveActivity extends AppCompatActivity {
         setContentView(R.layout.activity_activity_reserve);
 
         // Get passed data (activity ID)
-        activityId = getIntent().getIntExtra("activity_id", -1);  // Check if activity ID is passed
+        activityId = getIntent().getIntExtra("activity_id", -1);
         if (activityId == -1) {
             Toast.makeText(this, "No Activity ID received!", Toast.LENGTH_SHORT).show();
             finish();
@@ -40,7 +40,7 @@ public class ActivityReserveActivity extends AppCompatActivity {
         }
 
         long bookingDate = System.currentTimeMillis(); // Use current timestamp
-        long bookingId = activityBookingDao.addActivityBooking(userId, activityId, bookingDate);
+        long bookingId = activityBookingDao.addActivityBooking(userId, activityId, String.valueOf(bookingDate));
 
         if (bookingId > 0) {
             Toast.makeText(this, "Activity booked successfully!", Toast.LENGTH_SHORT).show();

@@ -5,13 +5,17 @@ public class ActivityItem {
     public String title;
     public String description;
     public double price;
-    public long timestamp;  // Add timestamp to track activity creation time
 
-    // Constructor with required parameters
-    public ActivityItem(String title, String description, double price, long timestamp) {
+    // Constructor
+    public ActivityItem(String title, String description, double price) {
         this.title = title;
         this.description = description;
         this.price = price;
-        this.timestamp = timestamp;
     }
+
+    // Getters and setters
+    public int getId() { return id; }
+    public String getTitle() { return title; }
+    public String getDescription() { return description; }
+    public double getPrice() { return price; }
 }

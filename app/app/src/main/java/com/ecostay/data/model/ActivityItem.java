@@ -1,1 +1,0 @@
-package com.ecostay.data.model; public class ActivityItem { public int id; public String title,description; public double price; }

@@ -22,7 +22,5 @@
         <activity android:name=".ui.info.InfoActivity" android:exported="false"/>
         <activity android:name=".ui.auth.BookingHistoryActivity" />
 
-
-
     </application>
 </manifest>

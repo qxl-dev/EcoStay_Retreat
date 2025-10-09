@@ -1,0 +1,70 @@
+[
+    {
+        "merged": "com.ecostay.app-debug-32:/layout_activity_profile.xml.flat",
+        "source": "com.ecostay.app-main-34:/layout/activity_profile.xml"
+    },
+    {
+        "merged": "com.ecostay.app-debug-32:/layout_activity_info.xml.flat",
+        "source": "com.ecostay.app-main-34:/layout/activity_info.xml"
+    },
+    {
+        "merged": "com.ecostay.app-debug-32:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.ecostay.app-main-34:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.ecostay.app-debug-32:/layout_fragment_booking_history.xml.flat",
+        "source": "com.ecostay.app-main-34:/layout/fragment_booking_history.xml"
+    },
+    {
+        "merged": "com.ecostay.app-debug-32:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.ecostay.app-main-34:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.ecostay.app-debug-32:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.ecostay.app-main-34:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.ecostay.app-debug-32:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.ecostay.app-main-34:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.ecostay.app-debug-32:/layout_activity_activity_reserve.xml.flat",
+        "source": "com.ecostay.app-main-34:/layout/activity_activity_reserve.xml"
+    },
+    {
+        "merged": "com.ecostay.app-debug-32:/layout_item_activity.xml.flat",
+        "source": "com.ecostay.app-main-34:/layout/item_activity.xml"
+    },
+    {
+        "merged": "com.ecostay.app-debug-32:/layout_activity_login.xml.flat",
+        "source": "com.ecostay.app-main-34:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.ecostay.app-debug-32:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.ecostay.app-main-34:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.ecostay.app-debug-32:/layout_item_room.xml.flat",
+        "source": "com.ecostay.app-main-34:/layout/item_room.xml"
+    },
+    {
+        "merged": "com.ecostay.app-debug-32:/layout_activity_room_list.xml.flat",
+        "source": "com.ecostay.app-main-34:/layout/activity_room_list.xml"
+    },
+    {
+        "merged": "com.ecostay.app-debug-32:/layout_activity_activity_list.xml.flat",
+        "source": "com.ecostay.app-main-34:/layout/activity_activity_list.xml"
+    },
+    {
+        "merged": "com.ecostay.app-debug-32:/layout_activity_room_detail.xml.flat",
+        "source": "com.ecostay.app-main-34:/layout/activity_room_detail.xml"
+    },
+    {
+        "merged": "com.ecostay.app-debug-32:/layout_activity_main.xml.flat",
+        "source": "com.ecostay.app-main-34:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.ecostay.app-debug-32:/layout_activity_register.xml.flat",
+        "source": "com.ecostay.app-main-34:/layout/activity_register.xml"
+    }
+]

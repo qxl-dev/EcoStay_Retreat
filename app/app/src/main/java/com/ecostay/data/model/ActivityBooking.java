@@ -1,1 +1,0 @@
-package com.ecostay.data.model; public class ActivityBooking { public int id,user_id,activity_id; public String date; }
