@@ -1,5 +1,9 @@
 [
     {
+        "merged": "com.ecostay.app-debug-32:/layout_activity_profile.xml.flat",
+        "source": "com.ecostay.app-main-34:/layout/activity_profile.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\layout_fragment_booking_history.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\layout\\fragment_booking_history.xml"
     },
@@ -18,6 +22,26 @@
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\layout_activity_activity_list.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\layout\\activity_activity_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\drawable_nature_bg.jpeg.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\drawable\\nature_bg.jpeg"
+    },
+    {
+        "merged": "com.ecostay.app-debug-32:/layout_activity_activity_reserve.xml.flat",
+        "source": "com.ecostay.app-main-34:/layout/activity_activity_reserve.xml"
+    },
+    {
+        "merged": "com.ecostay.app-debug-32:/drawable_book_activity_bg.jpg.flat",
+        "source": "com.ecostay.app-main-34:/drawable/book_activity_bg.jpg"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\drawable_nature_gradient_background.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\drawable\\nature_gradient_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\drawable_lv_bg.jpg.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\drawable\\lv_bg.jpg"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\drawable_ic_launcher_background.xml.flat",
@@ -60,8 +84,16 @@
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\drawable\\eco_button_selector.xml"
     },
     {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\drawable_activity_bg.jpg.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\drawable\\activity_bg.jpg"
+    },
+    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\drawable_eco_button_primary.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\drawable\\eco_button_primary.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\layout_activity_list_item.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\layout\\activity_list_item.xml"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\layout_activity_room_list.xml.flat",
@@ -80,24 +112,40 @@
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\drawable_gradient_background.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\drawable\\gradient_background.xml"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\drawable_fv_bg.jpg.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\drawable\\fv_bg.jpg"
     },
     {
-        "merged": "com.ecostay.app-debug-32:/layout_activity_room_list.xml.flat",
-        "source": "com.ecostay.app-main-34:/layout/activity_room_list.xml"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\drawable_cabin_bg.jpg.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\drawable\\cabin_bg.jpg"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\drawable_gradient_background.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\drawable\\gradient_background.xml"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\drawable_eco_card_background.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\drawable\\eco_card_background.xml"
     },
     {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\drawable_profile_bg.jpg.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\drawable\\profile_bg.jpg"
+    },
+    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\layout\\activity_main.xml"
     },
     {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\drawable_nature_pattern.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\drawable\\nature_pattern.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\layout_activity_profile.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\layout\\activity_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\drawable_about_bg.jpg.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\drawable\\about_bg.jpg"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-debug-32:\\layout_item_activity.xml.flat",

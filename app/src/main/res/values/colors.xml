@@ -1,18 +1,18 @@
 <resources>
-    <!-- Primary Eco-Friendly Colors -->
-    <color name="eco_primary">#2E7D32</color> <!-- Forest Green -->
-    <color name="eco_primary_dark">#1B5E20</color> <!-- Dark Forest Green -->
-    <color name="eco_primary_light">#4CAF50</color> <!-- Light Green -->
+    <!-- Primary Colors (Eco Core) -->
+    <color name="eco_primary">#2D6A4F</color> <!-- Moss Green -->
+    <color name="eco_primary_dark">#1B4332</color> <!-- Deep Forest Green -->
+    <color name="eco_primary_light">#40916C</color> <!-- Sage Green -->
     
     <!-- Secondary Colors -->
-    <color name="eco_secondary">#8BC34A</color> <!-- Light Green -->
-    <color name="eco_secondary_dark">#689F38</color> <!-- Dark Light Green -->
-    <color name="eco_secondary_light">#AED581</color> <!-- Very Light Green -->
+    <color name="eco_secondary">#00B4A0</color> <!-- Sky Teal -->
+    <color name="eco_secondary_dark">#008B7A</color> <!-- Darker Teal -->
+    <color name="eco_secondary_light">#4DD0C1</color> <!-- Light Teal -->
     
     <!-- Accent Colors -->
-    <color name="eco_accent">#FFC107</color> <!-- Amber -->
-    <color name="eco_accent_dark">#FF8F00</color> <!-- Dark Amber -->
-    <color name="eco_accent_light">#FFECB3</color> <!-- Light Amber -->
+    <color name="eco_accent">#B5A642</color> <!-- Olive Gold -->
+    <color name="eco_accent_dark">#8B7A2A</color> <!-- Darker Olive Gold -->
+    <color name="eco_accent_light">#D4C96A</color> <!-- Light Olive Gold -->
     
     <!-- Earth Tones -->
     <color name="eco_earth">#8D6E63</color> <!-- Brown -->
@@ -20,32 +20,38 @@
     <color name="eco_earth_light">#D7CCC8</color> <!-- Light Brown -->
     
     <!-- Sky Colors -->
-    <color name="eco_sky">#81C784</color> <!-- Sky Blue Green -->
-    <color name="eco_sky_dark">#4CAF50</color> <!-- Dark Sky -->
-    <color name="eco_sky_light">#C8E6C9</color> <!-- Light Sky -->
+    <color name="eco_sky">#00B4A0</color> <!-- Sky Teal -->
+    <color name="eco_sky_dark">#008B7A</color> <!-- Dark Sky Teal -->
+    <color name="eco_sky_light">#4DD0C1</color> <!-- Light Sky Teal -->
     
-    <!-- Neutral Colors -->
-    <color name="eco_white">#FFFFFF</color>
-    <color name="eco_black">#212121</color>
-    <color name="eco_gray_light">#F5F5F5</color>
-    <color name="eco_gray">#9E9E9E</color>
-    <color name="eco_gray_dark">#424242</color>
+    <!-- Dark Theme Neutral Colors -->
+    <color name="eco_white">#E6CBA8</color> <!-- Warm Beige -->
+    <color name="eco_black">#121212</color> <!-- Charcoal Black -->
+    <color name="eco_gray_light">#BDBDBD</color> <!-- Ash Gray -->
+    <color name="eco_gray">#2C2C2C</color> <!-- Stone Gray -->
+    <color name="eco_gray_dark">#121212</color> <!-- Charcoal Black -->
     
-    <!-- Background Colors -->
-    <color name="eco_background">#F1F8E9</color> <!-- Very Light Green -->
-    <color name="eco_surface">#FFFFFF</color>
-    <color name="eco_surface_variant">#F5F5F5</color>
+    <!-- Dark Theme Background Colors -->
+    <color name="eco_background">#121212</color> <!-- Charcoal Black -->
+    <color name="eco_surface">#1A1A1A</color> <!-- Darker Charcoal -->
+    <color name="eco_surface_variant">#2C2C2C</color> <!-- Stone Gray -->
     
-    <!-- Text Colors -->
-    <color name="eco_text_primary">#1B5E20</color>
-    <color name="eco_text_secondary">#2E7D32</color>
-    <color name="eco_text_hint">#689F38</color>
+    <!-- Dark Theme Text Colors -->
+    <color name="eco_text_primary">#FFFFFF</color> <!-- White -->
+    <color name="eco_text_secondary">#BDBDBD</color> <!-- Ash Gray -->
+    <color name="eco_text_hint">#757575</color> <!-- Medium Gray -->
     
     <!-- Status Colors -->
-    <color name="eco_success">#4CAF50</color>
-    <color name="eco_warning">#FF9800</color>
-    <color name="eco_error">#F44336</color>
-    <color name="eco_info">#2196F3</color>
+    <color name="eco_success">#40916C</color> <!-- Sage Green -->
+    <color name="eco_warning">#B5A642</color> <!-- Olive Gold -->
+    <color name="eco_error">#F44336</color> <!-- Red -->
+    <color name="eco_info">#00B4A0</color> <!-- Sky Teal -->
+    
+    <!-- Gradient Colors -->
+    <color name="eco_gradient_start">#1B4332</color> <!-- Deep Forest Green -->
+    <color name="eco_gradient_end">#2D6A4F</color> <!-- Moss Green -->
+    <color name="eco_gradient_secondary_start">#2D6A4F</color> <!-- Moss Green -->
+    <color name="eco_gradient_secondary_end">#40916C</color> <!-- Sage Green -->
     
     <!-- Legacy colors for compatibility -->
     <color name="eco_green">#2E7D32</color>
@@ -58,4 +64,21 @@
     <color name="eco_light_blue">#B3E5FC</color>
     <color name="dark_blue">#0D47A1</color>
     <color name="light_blue">#42A5F5</color>
+
+    <!-- Primary Eco Palette -->
+    <color name="deep_forest_green">#1B4332</color>
+    <color name="moss_green">#2D6A4F</color>
+    <color name="sage_green">#40916C</color>
+
+    <!-- Neutrals & Accents (optional) -->
+    <color name="charcoal_black">#121212</color>
+    <color name="stone_gray">#2C2C2C</color>
+    <color name="ash_gray">#BDBDBD</color>
+
+    <color name="olive_gold">#B5A642</color>
+    <color name="sky_teal">#00B4A0</color>
+    <color name="warm_beige">#E6CBA8</color>
 </resources>
+
+
+

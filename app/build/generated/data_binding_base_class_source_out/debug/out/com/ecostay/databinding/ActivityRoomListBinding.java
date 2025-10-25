@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ScrollView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -20,7 +20,7 @@ import java.lang.String;
 
 public final class ActivityRoomListBinding implements ViewBinding {
   @NonNull
-  private final ScrollView rootView;
+  private final LinearLayout rootView;
 
   @NonNull
   public final Button btnShowAll;
@@ -40,7 +40,7 @@ public final class ActivityRoomListBinding implements ViewBinding {
   @NonNull
   public final TextView tvTitle;
 
-  private ActivityRoomListBinding(@NonNull ScrollView rootView, @NonNull Button btnShowAll,
+  private ActivityRoomListBinding(@NonNull LinearLayout rootView, @NonNull Button btnShowAll,
       @NonNull Button btnSortPrice, @NonNull Button btnSortType,
       @NonNull RecyclerView recyclerRooms, @NonNull Spinner spinnerFilter,
       @NonNull TextView tvTitle) {
@@ -55,7 +55,7 @@ public final class ActivityRoomListBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public ScrollView getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -116,7 +116,7 @@ public final class ActivityRoomListBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityRoomListBinding((ScrollView) rootView, btnShowAll, btnSortPrice,
+      return new ActivityRoomListBinding((LinearLayout) rootView, btnShowAll, btnSortPrice,
           btnSortType, recyclerRooms, spinnerFilter, tvTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);

@@ -20,34 +20,49 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        
+        try {
+            setContentView(R.layout.activity_login);
 
-        etEmail = findViewById(R.id.etEmail);
-        etPassword = findViewById(R.id.etPassword);
-        btnLogin = findViewById(R.id.btnLogin);
-        btnRegister = findViewById(R.id.btnGoRegister);
+            etEmail = findViewById(R.id.etEmail);
+            etPassword = findViewById(R.id.etPassword);
+            btnLogin = findViewById(R.id.btnLogin);
+            btnRegister = findViewById(R.id.btnGoRegister);
 
-        userDao = new UserDao(this);
+            userDao = new UserDao(this);
 
-        btnLogin.setOnClickListener(v -> {
-            String email = etEmail.getText().toString().trim();
-            String pass = etPassword.getText().toString().trim();
+            btnLogin.setOnClickListener(v -> {
+                try {
+                    String email = etEmail.getText().toString().trim();
+                    String pass = etPassword.getText().toString().trim();
 
-            User user = userDao.loginUser(email, pass);
+                    User user = userDao.loginUser(email, pass);
 
-            if (user != null) {
-                SessionManager.setUserId(this, user.id);
-                SessionManager.setUserName(this, user.name);
-                SessionManager.setUserEmail(this, user.email);
-                Toast.makeText(this, "Welcome, " + user.name + "!", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this, MainActivity.class));
-                finish();
-            } else {
-                Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show();
-            }
-        });
+                    if (user != null) {
+                        SessionManager.setUserId(this, user.id);
+                        SessionManager.setUserName(this, user.name);
+                        SessionManager.setUserEmail(this, user.email);
+                        Toast.makeText(this, "Welcome, " + user.name + "!", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(this, MainActivity.class));
+                        finish();
+                    } else {
+                        Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (Exception e) {
+                    Toast.makeText(this, "Login error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+            });
 
-        btnRegister.setOnClickListener(v ->
-                startActivity(new Intent(this, RegisterActivity.class)));
+            btnRegister.setOnClickListener(v -> {
+                try {
+                    startActivity(new Intent(this, RegisterActivity.class));
+                } catch (Exception e) {
+                    Toast.makeText(this, "Error opening registration", Toast.LENGTH_SHORT).show();
+                }
+            });
+        } catch (Exception e) {
+            // If there's any error, show a simple message
+            Toast.makeText(this, "App initialization error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+        }
     }
 }

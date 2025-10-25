@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -21,7 +22,13 @@ public final class ActivityActivityReserveBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
+  public final LinearLayout bookingStatusCard;
+
+  @NonNull
   public final Button btnBookActivity;
+
+  @NonNull
+  public final Button btnCancelBooking;
 
   @NonNull
   public final TextView tvActivityDescription;
@@ -32,14 +39,26 @@ public final class ActivityActivityReserveBinding implements ViewBinding {
   @NonNull
   public final TextView tvActivityTitle;
 
+  @NonNull
+  public final TextView tvBookingDate;
+
+  @NonNull
+  public final TextView tvBookingStatus;
+
   private ActivityActivityReserveBinding(@NonNull ScrollView rootView,
-      @NonNull Button btnBookActivity, @NonNull TextView tvActivityDescription,
-      @NonNull TextView tvActivityPrice, @NonNull TextView tvActivityTitle) {
+      @NonNull LinearLayout bookingStatusCard, @NonNull Button btnBookActivity,
+      @NonNull Button btnCancelBooking, @NonNull TextView tvActivityDescription,
+      @NonNull TextView tvActivityPrice, @NonNull TextView tvActivityTitle,
+      @NonNull TextView tvBookingDate, @NonNull TextView tvBookingStatus) {
     this.rootView = rootView;
+    this.bookingStatusCard = bookingStatusCard;
     this.btnBookActivity = btnBookActivity;
+    this.btnCancelBooking = btnCancelBooking;
     this.tvActivityDescription = tvActivityDescription;
     this.tvActivityPrice = tvActivityPrice;
     this.tvActivityTitle = tvActivityTitle;
+    this.tvBookingDate = tvBookingDate;
+    this.tvBookingStatus = tvBookingStatus;
   }
 
   @Override
@@ -69,9 +88,21 @@ public final class ActivityActivityReserveBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.bookingStatusCard;
+      LinearLayout bookingStatusCard = ViewBindings.findChildViewById(rootView, id);
+      if (bookingStatusCard == null) {
+        break missingId;
+      }
+
       id = R.id.btnBookActivity;
       Button btnBookActivity = ViewBindings.findChildViewById(rootView, id);
       if (btnBookActivity == null) {
+        break missingId;
+      }
+
+      id = R.id.btnCancelBooking;
+      Button btnCancelBooking = ViewBindings.findChildViewById(rootView, id);
+      if (btnCancelBooking == null) {
         break missingId;
       }
 
@@ -93,8 +124,21 @@ public final class ActivityActivityReserveBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityActivityReserveBinding((ScrollView) rootView, btnBookActivity,
-          tvActivityDescription, tvActivityPrice, tvActivityTitle);
+      id = R.id.tvBookingDate;
+      TextView tvBookingDate = ViewBindings.findChildViewById(rootView, id);
+      if (tvBookingDate == null) {
+        break missingId;
+      }
+
+      id = R.id.tvBookingStatus;
+      TextView tvBookingStatus = ViewBindings.findChildViewById(rootView, id);
+      if (tvBookingStatus == null) {
+        break missingId;
+      }
+
+      return new ActivityActivityReserveBinding((ScrollView) rootView, bookingStatusCard,
+          btnBookActivity, btnCancelBooking, tvActivityDescription, tvActivityPrice,
+          tvActivityTitle, tvBookingDate, tvBookingStatus);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

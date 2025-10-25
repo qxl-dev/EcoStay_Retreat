@@ -6,7 +6,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.ecostay.R;
-import com.ecostay.ui.auth.LoginActivity;
+import com.ecostay.ui.auth.SimpleLoginActivity;
 import com.ecostay.ui.auth.ProfileActivity;
 import com.ecostay.ui.auth.BookingHistoryActivity;
 import com.ecostay.ui.activities.ActivityListActivity;
@@ -20,20 +20,32 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        
+        try {
+            setContentView(R.layout.activity_main);
 
-        // Check if the user is logged in; if not, redirect to LoginActivity
-        if (SessionManager.getUserId(this) == 0) {
-            startActivity(new Intent(this, LoginActivity.class));
+            // Check if the user is logged in; if not, redirect to SimpleLoginActivity
+            if (SessionManager.getUserId(this) == 0) {
+                startActivity(new Intent(this, SimpleLoginActivity.class));
+                finish();
+                return;
+            }
+
+            // Initialize UI components
+            initializeViews();
+            setupClickListeners();
+            updateWelcomeMessage();
+            
+            // Set default recommendations text to avoid database issues
+            TextView tvRecommendations = findViewById(R.id.tvRecommendations);
+            if (tvRecommendations != null) {
+                tvRecommendations.setText("Discover our eco-friendly activities and nature experiences!");
+            }
+        } catch (Exception e) {
+            // If there's any error, redirect to login
+            startActivity(new Intent(this, SimpleLoginActivity.class));
             finish();
-            return;
         }
-
-        // Initialize UI components
-        initializeViews();
-        setupClickListeners();
-        updateWelcomeMessage();
-        loadPersonalizedRecommendations();
     }
 
     private void initializeViews() {
@@ -61,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         // Handle logout functionality
         findViewById(R.id.btnLogout).setOnClickListener(v -> {
             SessionManager.clear(this);
-            startActivity(new Intent(this, LoginActivity.class));
+            startActivity(new Intent(this, SimpleLoginActivity.class));
             finish();
         });
 
@@ -105,6 +117,10 @@ public class MainActivity extends AppCompatActivity {
     private void loadPersonalizedRecommendations() {
         try {
             TextView tvRecommendations = findViewById(R.id.tvRecommendations);
+            if (tvRecommendations == null) {
+                return; // Exit if view not found
+            }
+            
             UserDao userDao = new UserDao(this);
             int userId = SessionManager.getUserId(this);
             
@@ -113,22 +129,26 @@ public class MainActivity extends AppCompatActivity {
                 StringBuilder recommendationsText = new StringBuilder();
                 
                 for (String recommendation : recommendations) {
-                    recommendationsText.append("• ").append(recommendation).append("\n");
+                    recommendationsText.append(recommendation).append("\n");
                 }
                 
                 if (recommendationsText.length() > 0) {
                     tvRecommendations.setText(recommendationsText.toString().trim());
                 } else {
-                    tvRecommendations.setText("🌿 Discover our eco-friendly activities and nature experiences!");
+                    tvRecommendations.setText("Discover our eco-friendly activities and nature experiences!");
                 }
             } else {
-                tvRecommendations.setText("🌿 Discover our eco-friendly activities and nature experiences!");
+                tvRecommendations.setText("Discover our eco-friendly activities and nature experiences!");
             }
         } catch (Exception e) {
             // Fallback if there's any error loading recommendations
-            TextView tvRecommendations = findViewById(R.id.tvRecommendations);
-            if (tvRecommendations != null) {
-                tvRecommendations.setText("🌿 Discover our eco-friendly activities and nature experiences!");
+            try {
+                TextView tvRecommendations = findViewById(R.id.tvRecommendations);
+                if (tvRecommendations != null) {
+                    tvRecommendations.setText("Discover our eco-friendly activities and nature experiences!");
+                }
+            } catch (Exception ex) {
+                // Ignore if we can't even set the fallback text
             }
         }
     }
@@ -138,7 +158,5 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         // Update welcome message in case user info changed
         updateWelcomeMessage();
-        // Reload recommendations in case user preferences changed
-        loadPersonalizedRecommendations();
     }
 }

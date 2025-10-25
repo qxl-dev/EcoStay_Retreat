@@ -1,7 +1,9 @@
 package com.ecostay.ui.activities;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +18,8 @@ public class ActivityReserveActivity extends AppCompatActivity {
     ActivityBookingDao activityBookingDao;
     ActivityDao activityDao;
     ActivityItem selectedActivity;
+    boolean isBooked = false;
+    String bookingDate = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +39,13 @@ public class ActivityReserveActivity extends AppCompatActivity {
 
         // Load activity details
         loadActivityDetails();
+        checkBookingStatus();
 
         Button btnBookActivity = findViewById(R.id.btnBookActivity);
+        Button btnCancelBooking = findViewById(R.id.btnCancelBooking);
+        
         btnBookActivity.setOnClickListener(v -> bookActivity());
+        btnCancelBooking.setOnClickListener(v -> cancelBooking());
     }
 
     private void loadActivityDetails() {
@@ -56,6 +64,33 @@ public class ActivityReserveActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Activity not found!", Toast.LENGTH_SHORT).show();
             finish();
+        }
+    }
+
+    private void checkBookingStatus() {
+        int userId = SessionManager.getUserId(this);
+        if (userId > 0) {
+            isBooked = activityBookingDao.hasExistingBooking(userId, activityId);
+            if (isBooked) {
+                // Get booking date
+                bookingDate = activityBookingDao.getBookingDate(userId, activityId);
+                updateUIForBookedStatus();
+            }
+        }
+    }
+
+    private void updateUIForBookedStatus() {
+        LinearLayout bookingStatusCard = findViewById(R.id.bookingStatusCard);
+        Button btnBookActivity = findViewById(R.id.btnBookActivity);
+        TextView tvBookingDate = findViewById(R.id.tvBookingDate);
+
+        if (isBooked) {
+            bookingStatusCard.setVisibility(View.VISIBLE);
+            btnBookActivity.setVisibility(View.GONE);
+            tvBookingDate.setText("Booking Date: " + bookingDate);
+        } else {
+            bookingStatusCard.setVisibility(View.GONE);
+            btnBookActivity.setVisibility(View.VISIBLE);
         }
     }
 
@@ -86,10 +121,36 @@ public class ActivityReserveActivity extends AppCompatActivity {
 
         if (bookingId > 0) {
             Toast.makeText(this, "Activity '" + selectedActivity.title + "' booked successfully!", Toast.LENGTH_LONG).show();
-            // Optionally finish the activity or go back
-            finish();
+            isBooked = true;
+            this.bookingDate = bookingDate;
+            updateUIForBookedStatus();
         } else {
             Toast.makeText(this, "Booking failed. Please try again later.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void cancelBooking() {
+        int userId = SessionManager.getUserId(this);
+        
+        if (userId == 0) {
+            Toast.makeText(this, "Please login to cancel bookings", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (selectedActivity == null) {
+            Toast.makeText(this, "Activity information not available", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        boolean cancelled = activityBookingDao.cancelBooking(userId, activityId);
+        
+        if (cancelled) {
+            Toast.makeText(this, "Booking for '" + selectedActivity.title + "' cancelled successfully!", Toast.LENGTH_LONG).show();
+            isBooked = false;
+            bookingDate = "";
+            updateUIForBookedStatus();
+        } else {
+            Toast.makeText(this, "Failed to cancel booking. Please try again later.", Toast.LENGTH_SHORT).show();
         }
     }
 }

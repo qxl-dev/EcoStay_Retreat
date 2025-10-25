@@ -21,6 +21,8 @@
 
         <!-- Other Activities -->
         <activity android:name=".ui.auth.LoginActivity" android:exported="false"/>
+        <activity android:name=".ui.auth.SimpleLoginActivity" android:exported="false"/>
+        <activity android:name=".ui.auth.TestLoginActivity" android:exported="false"/>
         <activity android:name=".ui.auth.RegisterActivity" android:exported="false"/>
         <activity android:name=".ui.auth.ProfileActivity" android:exported="false"/>
         <activity android:name=".ui.rooms.RoomListActivity" android:exported="false"/>

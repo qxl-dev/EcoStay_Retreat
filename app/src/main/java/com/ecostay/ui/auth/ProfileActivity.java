@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.ecostay.R;
 import com.ecostay.data.DatabaseHelper;
 import com.ecostay.util.SessionManager;
-import com.ecostay.ui.auth.LoginActivity;
+import com.ecostay.ui.auth.SimpleLoginActivity;
 import com.ecostay.ui.auth.BookingHistoryActivity;   // ✅ NEW import
 
 import android.database.Cursor;
@@ -18,7 +18,7 @@ import android.content.ContentValues;
 
 public class ProfileActivity extends AppCompatActivity {
     EditText etName, etEmail, etPreferences;
-    Button btnUpdate, btnLogout, btnBookings;  // ✅ Added new button
+    Button btnUpdate, btnLogout, btnBookings;
     DatabaseHelper dbHelper;
     int userId;
 
@@ -32,13 +32,13 @@ public class ProfileActivity extends AppCompatActivity {
         etPreferences = findViewById(R.id.etPreferences);
         btnUpdate = findViewById(R.id.btnUpdate);
         btnLogout = findViewById(R.id.btnLogout);
-        btnBookings = findViewById(R.id.btnBookings); // ✅ Initialize new button
+        btnBookings = findViewById(R.id.btnBookings);
 
         dbHelper = new DatabaseHelper(this);
         userId = SessionManager.getUserId(this);
 
         if (userId == 0) {
-            startActivity(new Intent(this, LoginActivity.class));
+            startActivity(new Intent(this, SimpleLoginActivity.class));
             finish();
             return;
         }
@@ -49,7 +49,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         btnLogout.setOnClickListener(v -> {
             SessionManager.clear(this);
-            startActivity(new Intent(this, LoginActivity.class));
+            startActivity(new Intent(this, SimpleLoginActivity.class));
             finish();
         });
 

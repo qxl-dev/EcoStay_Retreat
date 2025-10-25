@@ -1,14 +1,14 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/eco_background"
+    android:background="@drawable/cabin_bg"
     android:fillViewport="true">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp">
+        android:padding="24dp">
 
         <!-- Header Section -->
         <LinearLayout
@@ -16,17 +16,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/eco_card_background"
-            android:padding="24dp"
-            android:layout_marginBottom="20dp"
-            android:gravity="center">
+            android:padding="32dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:elevation="8dp">
 
             <!-- Welcome Title -->
             <TextView
-                android:text="🌿 EcoStay Retreat"
+                android:text="EcoStay Retreat"
                 android:textColor="@color/eco_primary"
-                android:textSize="28sp"
+                android:textSize="32sp"
                 android:textStyle="bold"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="12dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -34,8 +35,8 @@
             <TextView
                 android:text="Your Sustainable Getaway Awaits"
                 android:textColor="@color/eco_text_secondary"
-                android:textSize="16sp"
-                android:layout_marginBottom="16dp"
+                android:textSize="18sp"
+                android:layout_marginBottom="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -44,7 +45,7 @@
                 android:id="@+id/tvWelcomeUser"
                 android:text="Welcome back!"
                 android:textColor="@color/eco_text_primary"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -71,8 +72,8 @@
             <!-- Book a Room Button -->
             <Button
                 android:id="@+id/btnBookRoom"
-                android:text="🏨 Book a Room"
-                android:textColor="@android:color/white"
+                android:text="Book a Room"
+                android:textColor="@color/eco_text_primary"
                 style="@style/EcoButtonPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -81,8 +82,8 @@
             <!-- View Activities Button -->
             <Button
                 android:id="@+id/btnActivities"
-                android:text="🎯 Explore Activities"
-                android:textColor="@android:color/white"
+                android:text="Explore Activities"
+                android:textColor="@color/eco_text_primary"
                 style="@style/EcoButtonSecondary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -91,8 +92,8 @@
             <!-- View EcoStay Info Button -->
             <Button
                 android:id="@+id/btnInfo"
-                android:text="ℹ️ About EcoStay"
-                android:textColor="@android:color/white"
+                android:text="About EcoStay"
+                android:textColor="@color/eco_text_primary"
                 style="@style/EcoButtonSecondary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -118,8 +119,8 @@
             <!-- View Profile Button -->
             <Button
                 android:id="@+id/btnProfile"
-                android:text="👤 View Profile"
-                android:textColor="@android:color/white"
+                android:text="View Profile"
+                android:textColor="@color/eco_text_primary"
                 style="@style/EcoButtonSecondary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -128,8 +129,8 @@
             <!-- Booking History Button -->
             <Button
                 android:id="@+id/btnBookingHistory"
-                android:text="📋 Booking History"
-                android:textColor="@android:color/white"
+                android:text="Booking History"
+                android:textColor="@color/eco_text_primary"
                 style="@style/EcoButtonSecondary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -138,8 +139,8 @@
             <!-- Logout Button -->
             <Button
                 android:id="@+id/btnLogout"
-                android:text="🚪 Logout"
-                android:textColor="@android:color/white"
+                android:text="Logout"
+                android:textColor="@color/eco_text_primary"
                 style="@style/EcoButtonAccent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -149,7 +150,7 @@
 
         <!-- Personalized Recommendations Section -->
         <TextView
-            android:text="💡 Personalized Recommendations"
+            android:text="Personalized Recommendations"
             android:textColor="@color/eco_text_primary"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -178,7 +179,7 @@
 
         <!-- Footer -->
         <TextView
-            android:text="🌱 Committed to Sustainable Tourism"
+            android:text="Committed to Sustainable Tourism"
             android:textColor="@color/eco_text_secondary"
             android:textSize="14sp"
             android:gravity="center"

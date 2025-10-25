@@ -37,7 +37,7 @@ public class ActivityAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.item_activity, parent, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.activity_list_item, parent, false);
         }
 
         ActivityItem activity = activityList.get(position);
@@ -48,7 +48,7 @@ public class ActivityAdapter extends BaseAdapter {
 
         title.setText(activity.title);
         description.setText(activity.description);
-        price.setText("$" + activity.price);
+        price.setText("$" + String.format("%.2f", activity.price));
 
         return convertView;
     }

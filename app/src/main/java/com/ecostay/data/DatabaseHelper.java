@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "ecostay.db";
-    private static final int DB_VERSION = 3; // ✅ bump version to recreate DB with new user fields
+    private static final int DB_VERSION = 3; 
 
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -36,9 +36,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "user_id INTEGER, " +
                 "room_id INTEGER, " +
-                "room_title TEXT, " +          // added column
-                "price REAL, " +               // renamed total_price → price
-                "timestamp INTEGER)");         // ✅ added for date tracking
+                "room_title TEXT, " +
+                "price REAL, " +
+                "timestamp INTEGER)");
 
         db.execSQL("CREATE TABLE IF NOT EXISTS activities (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +

@@ -1,14 +1,14 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/eco_background"
+    android:background="@drawable/book_activity_bg"
     android:fillViewport="true">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp">
+        android:padding="24dp">
 
         <!-- Header Section -->
         <LinearLayout
@@ -16,23 +16,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/eco_card_background"
-            android:padding="24dp"
-            android:layout_marginBottom="20dp"
-            android:gravity="center">
+            android:padding="32dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:elevation="8dp">
 
             <TextView
-                android:text="🎯 Reserve Your Activity"
+                android:text="🎯 Activity Details"
                 android:textColor="@color/eco_primary"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 android:textStyle="bold"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="12dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
             <TextView
-                android:text="Confirm your eco-friendly activity booking"
+                android:text="Book your eco-friendly activity"
                 android:textColor="@color/eco_text_secondary"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -44,15 +45,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/eco_card_background"
-            android:padding="20dp"
-            android:layout_marginBottom="20dp">
+            android:padding="32dp"
+            android:layout_marginBottom="24dp"
+            android:elevation="8dp">
 
             <TextView
-                android:text="Activity Details"
+                android:text="Activity Information"
                 android:textColor="@color/eco_primary"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -60,9 +62,9 @@
                 android:id="@+id/tvActivityTitle"
                 android:text="Activity Title"
                 android:textColor="@color/eco_text_primary"
-                android:textSize="20sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -70,8 +72,8 @@
                 android:id="@+id/tvActivityDescription"
                 android:text="Activity Description"
                 android:textColor="@color/eco_text_secondary"
-                android:textSize="16sp"
-                android:layout_marginBottom="16dp"
+                android:textSize="18sp"
+                android:layout_marginBottom="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -79,12 +81,15 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:background="@drawable/eco_card_background"
+                android:padding="16dp"
+                android:elevation="4dp">
 
                 <TextView
                     android:text="Price: "
                     android:textColor="@color/eco_text_primary"
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
@@ -92,12 +97,61 @@
                     android:id="@+id/tvActivityPrice"
                     android:text="$0.00"
                     android:textColor="@color/eco_success"
-                    android:textSize="20sp"
+                    android:textSize="24sp"
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
             </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Booking Status Card -->
+        <LinearLayout
+            android:id="@+id/bookingStatusCard"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/eco_card_background"
+            android:padding="24dp"
+            android:layout_marginBottom="24dp"
+            android:elevation="8dp"
+            android:visibility="gone">
+
+            <TextView
+                android:text="Booking Status"
+                android:textColor="@color/eco_primary"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvBookingStatus"
+                android:text="You have booked this activity"
+                android:textColor="@color/eco_success"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvBookingDate"
+                android:text="Booking Date: "
+                android:textColor="@color/eco_text_secondary"
+                android:textSize="16sp"
+                android:layout_marginBottom="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnCancelBooking"
+                android:text="❌ Cancel Booking"
+                style="@style/EcoButtonAccent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 
@@ -108,13 +162,13 @@
             style="@style/EcoButtonPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginBottom="16dp"/>
 
         <!-- Info Text -->
         <TextView
             android:text="💡 You can view and manage your bookings in the Booking History section"
             android:textColor="@color/eco_text_secondary"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:gravity="center"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"

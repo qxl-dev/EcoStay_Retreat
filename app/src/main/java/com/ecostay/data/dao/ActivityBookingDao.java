@@ -114,4 +114,32 @@ public class ActivityBookingDao {
         db.close();
         return rowsAffected > 0;
     }
+
+    // Get booking date for a specific user and activity
+    public String getBookingDate(int userId, int activityId) {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(
+            "SELECT date FROM activity_bookings WHERE user_id = ? AND activity_id = ?",
+            new String[]{String.valueOf(userId), String.valueOf(activityId)}
+        );
+        
+        String bookingDate = "";
+        if (cursor.moveToFirst()) {
+            bookingDate = cursor.getString(0);
+        }
+        
+        cursor.close();
+        db.close();
+        return bookingDate;
+    }
+
+    // Cancel booking for a specific user and activity
+    public boolean cancelBooking(int userId, int activityId) {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        int rowsAffected = db.delete("activity_bookings", 
+            "user_id = ? AND activity_id = ?", 
+            new String[]{String.valueOf(userId), String.valueOf(activityId)});
+        db.close();
+        return rowsAffected > 0;
+    }
 }

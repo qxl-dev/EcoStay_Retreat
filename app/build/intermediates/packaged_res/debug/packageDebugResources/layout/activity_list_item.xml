@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/eco_card_background"
+    android:padding="20dp"
+    android:layout_margin="8dp"
+    android:elevation="6dp">
+
+    <!-- Activity Title -->
+    <TextView
+        android:id="@+id/tvActivityTitle"
+        android:text="Activity Title"
+        android:textColor="@color/eco_text_primary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- Activity Description -->
+    <TextView
+        android:id="@+id/tvActivityDescription"
+        android:text="Activity Description"
+        android:textColor="@color/eco_text_secondary"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- Price and Arrow -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tvActivityPrice"
+            android:text="$0.00"
+            android:textColor="@color/eco_success"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="→"
+            android:textColor="@color/eco_primary"
+            android:textSize="24sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

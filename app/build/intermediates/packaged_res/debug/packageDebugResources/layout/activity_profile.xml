@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="24dp"
-    android:background="@color/eco_light_blue"> <!-- Gradient color for background -->
+    android:background="@drawable/profile_bg">
 
     <LinearLayout
         android:orientation="vertical"
@@ -14,7 +14,7 @@
         <EditText
             android:id="@+id/etName"
             android:hint="Full Name"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textColorHint="@android:color/darker_gray"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
             android:id="@+id/etEmail"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textColorHint="@android:color/darker_gray"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
         <EditText
             android:id="@+id/etPreferences"
             android:hint="Preferences"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textColorHint="@android:color/darker_gray"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

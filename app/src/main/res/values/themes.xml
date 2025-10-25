@@ -1,9 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+
+    <!-- Base EcoStay Theme -->
     <style name="Base.Theme.EcoStayRetreat" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Disable Material button tinting -->
+        <item name="colorButtonNormal">@android:color/transparent</item>
+        <item name="colorControlHighlight">@android:color/transparent</item>
+        <item name="colorPrimary">@android:color/transparent</item>
+
+        <!-- Backgrounds -->
+        <item name="android:windowBackground">@color/charcoal_black</item>
+        <item name="android:navigationBarColor">@color/charcoal_black</item>
+        <item name="android:statusBarColor">@color/deep_forest_green</item>
     </style>
 
+    <!-- Active Theme -->
     <style name="Theme.EcoStayRetreat" parent="Base.Theme.EcoStayRetreat" />
 </resources>

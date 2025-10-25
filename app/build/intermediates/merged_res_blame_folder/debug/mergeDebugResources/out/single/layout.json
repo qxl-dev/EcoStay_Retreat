@@ -8,8 +8,8 @@
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\layout\\item_room.xml"
     },
     {
-        "merged": "com.ecostay.app-mergeDebugResources-31:/layout/activity_room_list.xml",
-        "source": "com.ecostay.app-main-34:/layout/activity_room_list.xml"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-mergeDebugResources-31:\\layout\\activity_list_item.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\layout\\activity_list_item.xml"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-mergeDebugResources-31:\\layout\\activity_main.xml",
@@ -40,12 +40,20 @@
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\layout\\activity_register.xml"
     },
     {
+        "merged": "com.ecostay.app-mergeDebugResources-31:/layout/activity_activity_reserve.xml",
+        "source": "com.ecostay.app-main-34:/layout/activity_activity_reserve.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-mergeDebugResources-31:\\layout\\activity_login.xml",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\layout\\activity_login.xml"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-mergeDebugResources-31:\\layout\\fragment_booking_history.xml",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-main-34:\\layout\\fragment_booking_history.xml"
+    },
+    {
+        "merged": "com.ecostay.app-mergeDebugResources-31:/layout/activity_profile.xml",
+        "source": "com.ecostay.app-main-34:/layout/activity_profile.xml"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.13\\com.ecostay.app-mergeDebugResources-31:\\layout\\activity_info.xml",

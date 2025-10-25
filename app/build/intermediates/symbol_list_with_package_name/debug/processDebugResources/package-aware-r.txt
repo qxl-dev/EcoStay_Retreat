@@ -1369,6 +1369,7 @@ color accent_material_dark
 color accent_material_light
 color androidx_core_ripple_material_light
 color androidx_core_secondary_text_default_material_light
+color ash_gray
 color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
@@ -1388,7 +1389,9 @@ color cardview_dark_background
 color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
+color charcoal_black
 color dark_blue
+color deep_forest_green
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -1441,6 +1444,10 @@ color eco_earth
 color eco_earth_dark
 color eco_earth_light
 color eco_error
+color eco_gradient_end
+color eco_gradient_secondary_end
+color eco_gradient_secondary_start
+color eco_gradient_start
 color eco_gray
 color eco_gray_dark
 color eco_gray_light
@@ -2073,6 +2080,7 @@ color material_timepicker_button_stroke
 color material_timepicker_clock_text_color
 color material_timepicker_clockface
 color material_timepicker_modebutton_tint
+color moss_green
 color mtrl_btn_bg_color_selector
 color mtrl_btn_ripple_color
 color mtrl_btn_stroke_color_selector
@@ -2130,6 +2138,7 @@ color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
+color olive_gold
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -2140,10 +2149,13 @@ color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
 color ripple_material_dark
 color ripple_material_light
+color sage_green
 color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color sky_teal
+color stone_gray
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -2152,6 +2164,7 @@ color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color tooltip_background_dark
 color tooltip_background_light
+color warm_beige
 color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
@@ -3035,8 +3048,11 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable about_bg
+drawable activity_bg
 drawable avd_hide_password
 drawable avd_show_password
+drawable book_activity_bg
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3046,6 +3062,7 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable button_background
+drawable cabin_bg
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -3057,6 +3074,7 @@ drawable eco_button_secondary
 drawable eco_button_selector
 drawable eco_card_background
 drawable edit_text_border
+drawable fv_bg
 drawable gradient_background
 drawable ic_arrow_back_black_24
 drawable ic_call_answer
@@ -3079,6 +3097,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
 drawable indeterminate_static
+drawable lv_bg
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
 drawable m3_bottom_sheet_drag_handle
@@ -3137,6 +3156,9 @@ drawable mtrl_switch_thumb_unchecked_pressed
 drawable mtrl_switch_track
 drawable mtrl_switch_track_decoration
 drawable mtrl_tabs_default_indicator
+drawable nature_bg
+drawable nature_gradient_background
+drawable nature_pattern
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg
@@ -3151,6 +3173,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable profile_bg
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3250,6 +3273,7 @@ id beginning
 id below
 id bestChoice
 id blocking
+id bookingStatusCard
 id bottom
 id bounce
 id bounceBoth
@@ -3261,6 +3285,7 @@ id btnBookNow
 id btnBookRoom
 id btnBookingHistory
 id btnBookings
+id btnCancelBooking
 id btnGoRegister
 id btnInfo
 id btnLogin
@@ -3668,6 +3693,8 @@ id triangle
 id tvActivityDescription
 id tvActivityPrice
 id tvActivityTitle
+id tvBookingDate
+id tvBookingStatus
 id tvDescription
 id tvInfo
 id tvPrice
@@ -3816,6 +3843,7 @@ layout abc_tooltip
 layout activity_activity_list
 layout activity_activity_reserve
 layout activity_info
+layout activity_list_item
 layout activity_login
 layout activity_main
 layout activity_profile
@@ -4374,6 +4402,7 @@ style EcoButtonPrimary
 style EcoButtonSecondary
 style EcoCard
 style EcoTextBody
+style EcoTextCaption
 style EcoTextSubtitle
 style EcoTextTitle
 style MaterialAlertDialog_Material3

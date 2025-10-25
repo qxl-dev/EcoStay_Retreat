@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@color/eco_white"/>
-    <corners android:radius="12dp"/>
-    <stroke
-        android:width="2dp"
-        android:color="@color/eco_primary"/>
-</shape>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/eco_secondary_dark" />
+            <corners android:radius="16dp" />
+            <stroke android:width="2dp" android:color="@color/eco_secondary" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/eco_surface" />
+            <corners android:radius="16dp" />
+            <stroke android:width="2dp" android:color="@color/eco_secondary" />
+        </shape>
+    </item>
+</selector>

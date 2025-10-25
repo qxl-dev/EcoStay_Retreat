@@ -1,30 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Pressed State -->
     <item android:state_pressed="true">
-        <shape>
+        <shape android:shape="rectangle">
             <gradient
-                android:startColor="@color/eco_primary_dark"
-                android:endColor="@color/eco_primary"
-                android:angle="90"/>
-            <corners android:radius="12dp"/>
+                android:type="linear"
+                android:angle="135"
+                android:startColor="@color/deep_forest_green"
+                android:endColor="@color/moss_green" />
+            <corners android:radius="16dp" />
         </shape>
     </item>
-    <item android:state_focused="true">
-        <shape>
-            <gradient
-                android:startColor="@color/eco_primary_light"
-                android:endColor="@color/eco_primary"
-                android:angle="90"/>
-            <corners android:radius="12dp"/>
-        </shape>
-    </item>
+
+    <!-- Default State -->
     <item>
-        <shape>
+        <shape android:shape="rectangle">
             <gradient
-                android:startColor="@color/eco_primary"
-                android:endColor="@color/eco_primary_dark"
-                android:angle="90"/>
-            <corners android:radius="12dp"/>
+                android:type="linear"
+                android:angle="135"
+                android:startColor="@color/moss_green"
+                android:endColor="@color/sage_green" />
+            <corners android:radius="16dp" />
         </shape>
     </item>
+
 </selector>

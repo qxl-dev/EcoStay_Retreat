@@ -46,6 +46,12 @@
             android:name="com.ecostay.ui.auth.LoginActivity"
             android:exported="false" />
         <activity
+            android:name="com.ecostay.ui.auth.SimpleLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.ecostay.ui.auth.TestLoginActivity"
+            android:exported="false" />
+        <activity
             android:name="com.ecostay.ui.auth.RegisterActivity"
             android:exported="false" />
         <activity
